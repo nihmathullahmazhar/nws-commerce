@@ -1,0 +1,92 @@
+/* Shared NWS Commerce staff-app theme (admin, POS). Import after tailwindcss. */
+/* Colour tokens. Light by default, dark follows the system unless forced. */
+:root {
+  --bg: #f5f6f4;
+  --surface: #ffffff;
+  --surface-2: #eff1ee;
+  --border: #e0e4df;
+  --border-strong: #c9cfc8;
+  --text: #171a18;
+  --muted: #5d655f;
+  --faint: #8a918c;
+  --accent: #1f5c4a;
+  --accent-hover: #184a3b;
+  --accent-soft: #e3efe9;
+  --accent-fg: #ffffff;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --warn: #9a5b00;
+  --warn-soft: #fff4e0;
+  --ok: #0f6b3c;
+  --ok-soft: #e4f4ea;
+  --info: #1d4f91;
+  --info-soft: #e7eefa;
+  --ring: #1f5c4a55;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1211;
+    --surface: #161a18;
+    --surface-2: #1d221f;
+    --border: #29302c;
+    --border-strong: #3a423d;
+    --text: #e7ebe8;
+    --muted: #a1aaa4;
+    --faint: #737c76;
+    --accent: #52b38f;
+    --accent-hover: #6cc6a3;
+    --accent-soft: #173229;
+    --accent-fg: #07130e;
+    --danger: #f27b70;
+    --danger-soft: #3a1714;
+    --warn: #f0b35a;
+    --warn-soft: #33250f;
+    --ok: #6fcf97;
+    --ok-soft: #13301f;
+    --info: #86b1ef;
+    --info-soft: #152640;
+    --ring: #52b38f66;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fg: var(--accent-fg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 1, "cv11" 1;
+}
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+::selection { background: var(--accent-soft); }
+dialog::backdrop { background: rgb(0 0 0 / 0.4); }
+.num { font-variant-numeric: tabular-nums; }

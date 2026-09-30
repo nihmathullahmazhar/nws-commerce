@@ -1,0 +1,27 @@
+{
+  "name": "nws-commerce",
+  "private": true,
+  "version": "0.5.0",
+  "description": "NWS Commerce - reusable retail commerce platform: storefront, POS, admin and inventory on one backend",
+  "type": "module",
+  "workspaces": [
+    "apps/admin",
+    "apps/pos",
+    "apps/storefront",
+    "packages/*"
+  ],
+  "scripts": {
+    "db:build": "bash scripts/build-paste.sh",
+    "db:verify": "bash db/tests/run.sh",
+    "db:types": "bash scripts/generate-types.sh",
+    "dev:setup": "bash scripts/dev-setup.sh",
+    "dev:api": "node dev/server.mjs",
+    "dev:admin": "npm run dev -w @nws-commerce/admin",
+    "dev:store": "npm run dev -w @nws-commerce/storefront",
+    "dev:pos": "npm run dev -w @nws-commerce/pos",
+    "dev:app": "cd apps/mobile && npx expo start"
+  },
+  "devDependencies": {
+    "pg": "^8.16.3"
+  }
+}

@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@nws-commerce/ui/theme.css";
+/* Tailwind scans the shared components for class names. */
+@source "../../../packages/ui/src";

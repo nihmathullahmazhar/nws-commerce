@@ -1,0 +1,9 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": { "@/*": ["./src/*"], "@nws-commerce/db": ["../../packages/db/src/index.ts"] }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "../../packages/db/src/**/*.ts"],
+  "exclude": ["node_modules", "android", "ios"]
+}

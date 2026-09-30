@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@nws-commerce/ui/theme.css";
+@source "../../../packages/ui/src";
+
+/* The till fills the screen; nothing scrolls except the lists inside it. */
+html, body, #root { overflow: hidden; }
+
+/* Receipts print on 80 mm thermal rolls (most printers take this width). */
+@media print {
+  @page { size: 80mm auto; margin: 0; }
+  html, body, #root { overflow: visible; height: auto; background: #fff; }
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: fixed; left: 0; top: 0; width: 80mm; background: #fff; padding: 3mm 4mm; color: #000; font-size: 11px; }
+}
+.print-area { font-family: ui-monospace, Menlo, Consolas, monospace; }
